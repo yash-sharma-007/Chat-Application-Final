@@ -44,7 +44,7 @@ const App = () => {
         localStorage.getItem("currentUser")
       ) {
         const response = await fetch(
-          `http://localhost:3001/api/chat/getmessages?senderUserId=${
+          `https://chat-application-final-backend.onrender.com/api/chat/getmessages?senderUserId=${
             JSON.parse(localStorage.getItem("currentUser"))._id
           }&receiverUserId=${
             JSON.parse(localStorage.getItem("receiverUser"))._id
@@ -65,7 +65,7 @@ const App = () => {
   const fetchUsers = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/api/users/allusers?emailid=${
+        `https://chat-application-final-backend.onrender.com/api/users/allusers?emailid=${
           JSON.parse(localStorage.getItem("currentUser")).email
         }`
       );
@@ -83,7 +83,7 @@ const App = () => {
 
   const handleSignUp = async (userInfo) => {
     try {
-      const response = await fetch("http://localhost:3001/api/users/signup", {
+      const response = await fetch("https://chat-application-final-backend.onrender.com/api/users/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -105,7 +105,7 @@ const App = () => {
 
   const handleLogin = async (userInfo) => {
     try {
-      const response = await fetch("http://localhost:3001/api/users/login", {
+      const response = await fetch("https://chat-application-final-backend.onrender.com/api/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
